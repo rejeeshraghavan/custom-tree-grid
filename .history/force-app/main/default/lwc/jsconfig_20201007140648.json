@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+        "experimentalDecorators": true,
+        "baseUrl": ".",
+        "paths": {
+            "c/lwcUtil": [
+                "lwcUtil/lwcUtil.js"
+            ]
+        }
+    },
+    "include": [
+        "**/*",
+        "../../../../.sfdx/typings/lwc/**/*.d.ts"
+    ],
+    "paths": {
+        "c/*": [
+            "*"
+        ]
+    },
+    "typeAcquisition": {
+        "include": [
+            "jest"
+        ]
+    }
+}

@@ -1,0 +1,86 @@
+<template>
+    <lightning-layout>
+        <lightning-layout-item padding="around-none" class="slds-var-m-top_small">
+            <template if:true={hasChildren}>
+                <lightning-button-icon
+                    icon-name={iconName}
+                    size="small"
+                    variant="bare"
+                    onclick={handleAccordionToggle} 
+                    alternative-text="Show Child Table">
+                </lightning-button-icon>
+            </template>
+            <template if:false={hasChildren}>
+                <div class="slds-var-m-left_medium slds-var-m-left_xxx-small">
+
+                </div>
+            </template>
+        </lightning-layout-item>
+        <template for:each={parentRow} for:item='row'>
+            <lightning-layout-item key={row.field} padding="around-small" size={row.size}>
+                <c-view-field 
+                    field-value={row.value}
+                    field-type={row.type}
+                    field-label={row.label}
+                    field-name={row.fieldName}>
+                </c-view-field>
+            </lightning-layout-item>
+        </template>
+        <lightning-layout-item padding="around-none" size="1" class="slds-grid_align-end slds-p-around_none slds-var-m-top_small">
+            <template if:true={editModeEnabled}>
+                <lightning-button-menu
+                    alternative-text="Row Actions"
+                    icon-size="small"
+                    onselect={handleParentMenuClick}>
+                    <lightning-menu-item
+                        label="Edit"
+                        value="editParent"
+                        icon-name="utility:edit">
+                    </lightning-menu-item>
+                    <lightning-menu-item
+                        label="Delete"
+                        value="deleteParent"
+                        icon-name="utility:delete">
+                    </lightning-menu-item>
+                    <lightning-menu-item
+                        label="Add Child"
+                        value="addChild"
+                        icon-name="utility:add">
+                    </lightning-menu-item>
+                </lightning-button-menu>
+            </template>
+        </lightning-layout-item>
+    </lightning-layout>
+    <!-- <div if:true={showChildTable} class="slds-var-p-left_x-large slds-p-around_none"> -->
+    <div if:true={showChildTable} class="slds-var-p-horizontal_xx-large slds-is-relative">
+        <c-child-row
+            parent-row-data={parentRowData}
+            child-relationship-name={childRelationshipName}
+            child-columns={childColumns}
+            edit-mode-enabled={editModeEnabled}
+            child-object-api-name={childObjectApiName}>
+        </c-child-row>
+    </div>
+    <div if:true={showEditModal} class="slds-container_small">
+        <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <h2 class="slds-text-heading_medium slds-hyphenate">{formHeader}</h2>
+                </header>
+                <div class="slds-modal__content slds-var-p-around_medium">
+                    <lightning-record-form
+                        object-api-name={formObjectApiName}
+                        record-id={formRecordId}
+                        layout-type="Full"
+                        mode={formMode}
+                        columns="2"
+                        onsuccess={handleFormSuccess}
+                        onerror={handleFormError}
+                        oncancel={handleFormCancel}>
+                    </lightning-record-form>
+                </div>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </div>
+</template>

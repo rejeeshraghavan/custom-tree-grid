@@ -1,0 +1,13 @@
+<template>
+    <c-custom-tree-grid
+        if:true={gridData}
+        parent-columns={parentColumns}
+        child-columns={childColumns}
+        grid-data={gridData}
+        edit-mode-enabled
+        child-relationship-name={childRelationshipName}
+        parent-object-api-name={objectApiName}
+        child-object-api-name={childObjectApiName}
+        ondatachange={handleDataChange}>
+    </c-custom-tree-grid>
+</template>
