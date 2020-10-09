@@ -1,5 +1,5 @@
 import { LightningElement, api, track, wire } from 'lwc';
-import getAccountsWithContacts from '@salesforce/apex/AccountGridController.getAccountsWithOpportunities';
+import getAccountsWithContacts from '@salesforce/apex/GridController.getAccountsWithOpportunities';
 import {refreshApex} from '@salesforce/apex';
 
 const PARENT_COLUMNS = [
