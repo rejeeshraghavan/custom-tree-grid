@@ -24,3 +24,23 @@ This lwc component can be used to show nested tables. Unlike the standard Tree G
 ```
 
 for more detailed examples refer `accountGridLwc` or `OpportunityGridLwc` components.
+
+
+## Screenshots
+
+### View Only Grid
+
+![View Only Grid Screenshot](https://github.com/rejeeshraghavan/custom-tree-grid/blob/master/assets/view-only-grid.png?raw=true)
+
+### Edit Enabled Grid
+
+![View Only Grid Screenshot](https://github.com/rejeeshraghavan/custom-tree-grid/blob/master/assets/editable-gird.png?raw=true)
+
+### Parent Row Edit Action
+
+![Parent Row Edit Action Screenshot](https://github.com/rejeeshraghavan/custom-tree-grid/blob/master/assets/parent-row-edit.png?raw=true)
+
+### Child Row Edit Action
+
+![Child Row Edit Action Screenshot](https://github.com/rejeeshraghavan/custom-tree-grid/blob/master/assets/child-row-edit.png?raw=true)
+
