@@ -22,8 +22,28 @@ This lwc component can be used to show nested tables. Unlike the standard Tree G
     </c-custom-tree-grid>
 </template>
 ```
-
 for more detailed examples refer `accountGridLwc` or `OpportunityGridLwc` components.
+
+### Attributes
+| Name | Description |
+| --- | --- |
+| parent-columns | Array of the parent columns parent object that's used to define the data types. Required properties include 'label', 'fieldName', and 'type'. The default type is 'text'. |
+| child-columns | Array of the columns child object that's used to define the data types. Required properties include 'label', 'fieldName', and 'type'. The default type is 'text'. |
+| grid-data | The array of data to be displayed. |
+| child-relationship-name | The API name of child object relationship. |
+| edit-mode-enabled | If present, edit mode is enabled. |
+| parent-object-api-name | The API Name of parent object. This is required if edit mode is enabled.|
+| child-object-api-name | The API Name of child object. This is required if edit mode is enabled. |
+
+### Methods
+| Name | Description |
+| --- | --- |
+| refreshGrid | Use this method to refresh data passed into the component. |
+
+### Custom Events
+| Name | Description |
+| --- | --- |
+| ondatachange | The event fired when underlying data is changed. Use this event to invoke refreshGrid method. See detailed implementation in handleDataChange method of  `accountGridLwc` component. |
 
 
 ## Screenshots
