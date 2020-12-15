@@ -6,6 +6,13 @@ This lwc component can be used to show nested tables. Unlike the standard Tree G
 - Different column names for parent table & child table
 - Add/Edit parent & child rows.
 
+## Installation
+
+<a href="https://githubsfdeploy.herokuapp.com?owner=rejeeshraghavan&repo=custom-tree-grid">
+<img alt="Deploy to Salesforce"
+   src="https://raw.githubusercontent.com/afawcett/githubsfdeploy/master/src/main/webapp/resources/img/deploy.png">
+</a>
+
 ## Usage
 ```html
 <template>
